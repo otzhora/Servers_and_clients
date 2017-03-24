@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yriy/CLionProjects/Servers_Clients/poll/server/main.cpp
+iostream
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+fcntl.h
+-
+set
+-
+algorithm
+-
+unistd.h
+-
+poll.h
+-
+
