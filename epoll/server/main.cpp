@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <poll.h>
 #include <sys/epoll.h>
-
+#include <arpa/inet.h>
 #define MAX_EVENTS 32
 
 using namespace std;
@@ -38,11 +38,13 @@ int main() {
         return 1;
     }
 
+    struct in_addr addr;
+    inet_aton("192.168.43.188", &addr);
     struct sockaddr_in SockAddr;
     SockAddr.sin_family = AF_INET;
-    SockAddr.sin_port = htons(8000);
+    SockAddr.sin_port = htons(8001);
     SockAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-
+    //cout << (int)addr << endl;
 
     if(bind(MasterSocket, (sockaddr*)&SockAddr, sizeof(SockAddr)) == -1)
     {
@@ -89,8 +91,10 @@ int main() {
                 }
                 else if(Recvsize > 0)
                 {
+                    Buffer[Recvsize] = 0;
                     cout << Buffer << endl;
-                    send(Events[i].data.fd, Buffer, 1024, MSG_NOSIGNAL);
+                    //send(Events[i].data.fd, Buffer, 1024, MSG_NOSIGNAL);
+
                 }
 
             }

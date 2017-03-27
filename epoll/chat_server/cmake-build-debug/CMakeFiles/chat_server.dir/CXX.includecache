@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/yriy/CLionProjects/Servers_Clients/epoll/server/main.cpp
+/home/yriy/CLionProjects/Servers_Clients/epoll/chat_server/main.cpp
 iostream
 -
 sys/types.h
@@ -17,16 +17,18 @@ netinet/in.h
 -
 fcntl.h
 -
-set
+map
 -
 algorithm
 -
-unistd.h
--
-poll.h
--
 sys/epoll.h
 -
+string
+-
+sstream
+-
 arpa/inet.h
+-
+unistd.h
 -
 
